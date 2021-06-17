@@ -10,10 +10,9 @@ https://trello.com/b/jYUHEyLn/the-wall
 
 **Wireframes:** 
 
-| Splash Page (Login w/ Google) | &nbsp;&nbsp;&nbsp;&nbsp;| Post Index View (All Posts) | &nbsp;&nbsp;&nbsp;&nbsp;| Post View (Post W/Comments) |
-
+| Splash Page (Login w/ Google) | 
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/splash.jpg?raw=true" width=200px alt="Splash Page">
-
+| Post Index View (All Posts) | 
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/indexview.jpg?raw=true" width=200px alt="Splash Page">
-
+| Post View (Post W/Comments) |
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/postview.jpg?raw=true" width=200px alt="Splash Page">
