@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <body>
-
+<div class="container">
     <div class="postbox">
         <form id="new-form" action="/posts" method="POST">
             <label></label>
@@ -10,10 +10,23 @@
     </div>
 
     <% posts.forEach(function(p) { %>
-        <div class="post"><%= p.content %>
-        <br />
-        <a href ="/posts/<%= p._id %>" class="postlinks">View Post</a>
+        <div class="post">
+            <div class="post-attributes">
+                Posted By: <a href ="#"><%= p.author.username %></a> at <%= p.createdAt %>
+            </div>
+        <div class="post-content">
+            <%= p.content %>
         </div>
-        <br /><br /><br />
+        <div class="post-links">
+            <a href ="/posts/<%= p._id %>" class="postlinks">View Post</a>
+            <% if (p.author.equals(user._id)) { %>
+            <a href ="/posts/<%= p._id %>" class="postlinks">Edit Post</a>
+            <a href ="/posts/<%= p._id %>" class="postlinks">Delete Post</a>
+            <% } %>
+        </div>
+
+        </div>
+        <br>
         <% }); %>
+    </div>
 </body>

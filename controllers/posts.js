@@ -13,8 +13,11 @@ module.exports = {
 };
 
 function index(req, res) {
-  Post.find({}, function(err, posts) {
-    
+  Post.find({})
+  .populate({
+    path: 'author',
+    model: 'User'
+  }).exec(function(err, posts) {
     res.render('posts/index', { posts})
   })
 }

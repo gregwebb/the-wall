@@ -8,16 +8,18 @@
   <title>The Wall</title>
 </head>
 <body>
+  <div class="container">
   <h1>The Wall</h1>
   <nav>
     <% if (user) { %>
-      Hello, <%= user.username %>!
-      <a href="/logout" class="navlinks"><button class="login">Log Out</button></a>
+      Hello, <%= user.username %>!  <a href="#"><button class="editprofile">Edit Profile</button></a>
+      <a href="/logout" class="navlinks"><button class="nav">Log Out</button></a>
     <% } else { %>
-      <a href="/auth/google" class="navlinks"><button class="login">Login with Google</button></a>
+      <a href="/auth/google" class="navlinks"><button class="nav">Login with Google</button></a>
     <% } %>
-    <a href="/posts" class="navlinks"> Feed </a>
-    <a href="/users" class="navlinks"> Users </a>
+    <a href="/posts" class="navlinks"><button class="nav"> Feed </button></a>
+    <a href="/users" class="navlinks"><button class="nav">  Users </button></a>
   </nav>
   <main>
+  </div>
     

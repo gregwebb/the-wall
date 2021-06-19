@@ -1,8 +1,16 @@
 body {
-  padding: 10px 50px 20px;
+  padding: 5px 5px 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #8f81f8;
+  
+}
+
+.container {
   max-width: 600px;
-  background-color: oldlace;
+  background-color: #d6f5fa;
+  padding-bottom: 100px;
+  padding:5px 20px 25px;
+  margin: auto;
 }
 
 a {
@@ -21,15 +29,18 @@ h1 {
   text-align: center;
 }
 
+.post-links {
+  font-size: smaller;
+  text-align: right;
+}
+
 .postlinks {
-  position: relative;
-  float: right;
-  padding-top: 15px;
-  padding-right:20px;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 nav {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 #index-post {
@@ -58,6 +69,7 @@ nav {
   padding-right:0px;
   padding-left: 30px;
   color: cornflowerblue;
+  text-decoration: none;
 }
 
 .poster {
@@ -67,18 +79,27 @@ nav {
 }
 
 .post-view{
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .commentbox {
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   width: 90%;
   margin: auto;
 }
 
-.login {
+.nav {
   position: relative;
   float: right;
+  background-color: slateblue;
+  color: whitesmoke;
+  padding: 3px 9px;
+}
+
+.editprofile {
   background-color: slateblue;
   color: whitesmoke;
   padding: 3px 9px;
@@ -92,12 +113,12 @@ nav {
   
 }
 
-.comment, p {
+.comment p {
   margin: 5px;
   background-color: lightblue;
 }
 
-.comment, a {
+.comment a {
   display: inline;
   float: right;
 }
@@ -105,5 +126,19 @@ nav {
 .comment-view {
   width:85%;
   margin:auto;
-  padding-bottom:25px;
+  margin-bottom: 20px;
+}
+
+.post-attributes{
+  text-align: left;
+  font-size: x-small;
+  padding: 5px;
+}
+
+.post-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
