@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+  <body>
+    <div class="post-view">
+      <div class="post"><%= post.content %></div>
+      <div class="poster">Posted By: 
+        <a href ="#" ><%= post.author.username %></a>
+      </div>
+      
+      <div class="comment-view">
+        <h4>Comments:</h4>
+        <% post.comments.forEach(function(c) { %>
+          <div class="comment">
+            <p><%= c.content %> <a href ="#" ><%= c.author.username  %></a></p>
+          </div>
+        <% }); %>
+      </div>
+   </div>
+
+   <div class="commentbox">
+      <form id="new-form" action="/posts/<%= post._id %>/" method="POST">
+          <textarea rows="5" id="index-post" type="text" name="content" placeholder="Reply to post.."></textarea>
+          <input id="submit" type="submit" value="Add Comment">
+        </form> 
+      </div>
+</body>

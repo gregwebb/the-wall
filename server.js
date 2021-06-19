@@ -7,6 +7,10 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
+var indexRouter = require('./routes/index');
+var postsRouter = require('./routes/posts');
+var commentsRouter = require('./routes/comments');
+
 // load the env vars
 require('dotenv').config();
 
@@ -43,14 +47,14 @@ app.use(passport.session());
 
 // Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
-  res.locals.user = req.user; // assinging a property to res.locals, makes that said property (user) availiable in every
-  // single ejs view
+  res.locals.user = req.user;
   next();
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
-
+app.use('/', indexRouter);
+app.use('/posts', postsRouter);
+app.use('/', commentsRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

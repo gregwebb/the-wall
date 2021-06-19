@@ -1,20 +1,109 @@
-.brand-logo {
-  margin-left: 15px;
+body {
+  padding: 10px 50px 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: 600px;
+  background-color: oldlace;
 }
 
-.card .card-content .card-title {
-  margin-bottom: 10px;
+a {
+  color: #00B7FF;
 }
 
-#search-row form {
-  padding-top: 20px;
+.post {
+  padding: 5px;
+  border: 2px;
+  border-style: dashed;
+  border-color: lightseagreen;
+  
 }
 
-.student-name {
+h1 {
+  text-align: center;
+}
+
+.postlinks {
   position: relative;
-  top: -5px;
+  float: right;
+  padding-top: 15px;
+  padding-right:20px;
 }
 
-.collection-item form {
-  margin-top: -5px;
+nav {
+  padding-bottom: 30px;
+}
+
+#index-post {
+  width: 100%;
+  background-color: #dfe3f7;
+  border: 2px;
+  resize: none;
+}
+#submit {
+  position: relative;
+  float: right;
+  background-color: #008CBA;
+  color: whitesmoke;
+  padding: 8px 16px;
+}
+
+.postbox {
+  margin: auto;
+  padding-bottom: 60px;
+  max-width: 90%;
+}
+
+.navlinks {
+  position: relative;
+  float: right;
+  padding-right:0px;
+  padding-left: 30px;
+  color: cornflowerblue;
+}
+
+.poster {
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.post-view{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.commentbox {
+  width: 90%;
+  margin: auto;
+}
+
+.login {
+  position: relative;
+  float: right;
+  background-color: slateblue;
+  color: whitesmoke;
+  padding: 3px 9px;
+}
+
+.comment {
+  border: 2px;
+  background-color: lightcyan;
+  width:85%;
+  margin: auto;
+  
+}
+
+.comment, p {
+  margin: 5px;
+  background-color: lightblue;
+}
+
+.comment, a {
+  display: inline;
+  float: right;
+}
+
+.comment-view {
+  width:85%;
+  margin:auto;
+  padding-bottom:25px;
 }

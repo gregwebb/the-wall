@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<body>
+
+    <div class="postbox">
+        <form id="new-form" action="/posts" method="POST">
+            <label></label>
+            <textarea rows="5" id="index-post" type="text" name="content" placeholder="Tell us how you really feel."></textarea>
+            <input id="submit" type="submit" value="Add Post">
+          </form> 
+    </div>
+
+    <% posts.forEach(function(p) { %>
+        <div class="post"><%= p.content %>
+        <br />
+        <a href ="/posts/<%= p._id %>" class="postlinks">View Post</a>
+        </div>
+        <br /><br /><br />
+        <% }); %>
+</body>

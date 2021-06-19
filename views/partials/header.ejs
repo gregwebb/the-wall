@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>The Wall</title>
+</head>
+<body>
+  <h1>The Wall</h1>
+  <nav>
+    <% if (user) { %>
+      Hello, <%= user.username %>!
+      <a href="/logout" class="navlinks"><button class="login">Log Out</button></a>
+    <% } else { %>
+      <a href="/auth/google" class="navlinks"><button class="login">Login with Google</button></a>
+    <% } %>
+    <a href="/posts" class="navlinks"> Feed </a>
+    <a href="/users" class="navlinks"> Users </a>
+  </nav>
+  <main>
+    
