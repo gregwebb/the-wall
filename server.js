@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var postsRouter = require('./routes/posts');
 var commentsRouter = require('./routes/comments');
 
+
 // load the env vars
 require('dotenv').config();
 
@@ -62,3 +63,4 @@ app.use(function(req, res) {
 });
 
 module.exports = app;
+

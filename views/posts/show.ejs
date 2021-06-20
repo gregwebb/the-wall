@@ -1,26 +1,41 @@
 <%- include('../partials/header') %>
-  <body>
-    <div class="post-view">
-      <div class="post"><%= post.content %></div>
-      <div class="poster">Posted By: 
-        <a href ="#" ><%= post.author.username %></a>
+<body>
+  <div class="container">
+    <div class="post">
+      <div class="post-attributes">
+        Posted By: <a href ="#"><%= post.author.username %></a> at <%= post.createdAt %>
       </div>
+      <div class="post-content-post">
+        <%= post.content %>
+      </div>
+      <% if(typeof user === "undefined"){ %>
+      <% } else if (post.author._id.equals(user._id)) { %>
+        <div class="post-buttons">
+          <form action="/posts/<%= post._id %>/edit?_method=EDIT" method="GET">
+            <input type="submit" class="action-button" value="Edit Post">
+          </form>  
+          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <input type="submit" class="action-button" value="Delete Post">
+          </form>  
+        </div>
+      <% } %> 
     </div>
-      
-      <div class="comment-view">
-        <h4>Comments:</h4>
-        <% post.comments.forEach(function(c) { %>
-          <div class="comment">
-            <p><%= c.content %> <a href ="#" ><%= c.author.username  %></a></p>
-          </div>
-        <% }); %>
-      </div>
-   
-
-   <div class="commentbox">
+    <div class="comment-view">
+      <h4>Comments: (<%= post.comments.length %>) </h4>
+      <% post.comments.forEach(function(c) { %>
+        <div class="comment">
+          <%= c.content %>
+          <p class="comment-details"> Posted By: <a href ="#" ><%= c.author.username  %></a> at <%=c.createdAt%></p>
+        </div>
+      <% }); %>
+    </div>
+    <div class="commentbox">
       <form id="new-form" action="/posts/<%= post._id %>/" method="POST">
-          <textarea rows="5" id="index-post" type="text" name="content" placeholder="Reply to post.."></textarea>
-          <input id="submit" type="submit" value="Add Comment">
-        </form> 
-      </div>
+        <textarea rows="5" id="index-post" type="text" name="content" placeholder="Reply to post.. (400 char limit)" maxlength="400"></textarea>
+        <input id="submit" type="submit" value="Add Comment">
+      </form> 
+    </div>
+  </div>
 </body>
+
+

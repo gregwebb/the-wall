@@ -35,10 +35,7 @@ passport.deserializeUser(function(_id, done) {
 
   User.findById(_id, function(err, user){
     done(err, user);
-    // setsup
-    // req.user = studentDoc
-    // req.user is avialible in all of our controller functions
-    // throughout the entire app
+
   })
 })
 

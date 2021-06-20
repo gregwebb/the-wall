@@ -9,12 +9,13 @@ body {
   max-width: 600px;
   background-color: #d6f5fa;
   padding-bottom: 100px;
-  padding:5px 20px 25px;
+  padding:5px 20px 35px;
   margin: auto;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
 
 .post {
@@ -30,13 +31,14 @@ h1 {
 }
 
 .post-links {
-  font-size: smaller;
+  font-size: x-small;
   text-align: right;
 }
 
 .postlinks {
   text-decoration: none;
   margin-right: 10px;
+  display: inline-block;
 }
 
 nav {
@@ -107,20 +109,9 @@ nav {
 
 .comment {
   border: 2px;
-  background-color: lightcyan;
-  width:85%;
+  background-color: lightblue;
   margin: auto;
   
-}
-
-.comment p {
-  margin: 5px;
-  background-color: lightblue;
-}
-
-.comment a {
-  display: inline;
-  float: right;
 }
 
 .comment-view {
@@ -141,4 +132,39 @@ nav {
   display: -webkit-box;
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
+}
+
+.post-content-post {
+padding: 5px;
+}
+
+
+.action-button {
+  background-color: #008CBA;
+  color: whitesmoke;
+  padding: 0;
+}
+
+.login-button {
+  background-color: slateblue;
+  color: whitesmoke;
+  padding: 25px 35px;
+}
+
+.login {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-buttons {
+  margin-right: 10px;
+  display: flex;
+}
+
+.comment-details {
+  font-size: xx-small;
+  text-align: right;
+  margin-right: 10px;
 }

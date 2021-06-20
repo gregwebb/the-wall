@@ -2,8 +2,6 @@ const Comment = require('../models/post');
 const User = require('../models/user');
 const Post = require('../models/post');
 
-
-
 module.exports = {
   index,
   show,
@@ -24,9 +22,6 @@ function show(req, res) {
 function newComment(req, res) {
   res.render('comments/new', { title: 'Add Comment' });
 }
-
-
-
 
 async function create(req, res) {
   const comment = new Comment(req.body);
