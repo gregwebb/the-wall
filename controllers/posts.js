@@ -15,14 +15,27 @@ module.exports = {
 };
 
 function index(req, res) {
+  const perPage = 5
+  const page = req.params.page || 1
+
   Post.find({})
   .populate({
     path: 'author',
     model: 'User'
-  }).exec(function(err, posts) {
-    res.render('posts/index', {posts})
   })
-}
+  .skip((perPage * page) - perPage)
+  .limit(perPage)
+  .exec(function(err, posts) {
+    Post.count().exec(function(err, count) {
+      if (err) return next(err)
+      res.render('posts/index', {
+        posts, page, pages: Math.ceil(count / perPage)})
+      })
+    })
+  }
+
+
+  
 
 
 
@@ -60,11 +73,6 @@ function create(req, res) {
   });
 }
 
-function deletePost (req, res) {
-  Post.findByIdAndDelete(req.params.id)
-      res.redirect('/posts')
-  }
-
 
   async function deletePost (req, res) {
     try {
@@ -74,6 +82,20 @@ function deletePost (req, res) {
         res.send(err)
     }
 }
+
+
+function deletePost(req, res) {
+  Post.findById(req.params.id, function(err, post) {
+    if (post.author._id.equals(req.user._id)) { 
+      post.remove(function(err) {
+        res.redirect('/posts');
+    });
+    } else {
+      res.redirect(`/posts/${post._id}`)
+  }
+  });
+}
+
 
 function edit(req, res) {
   Post.findById(req.params.id, function(err, post) {
@@ -85,8 +107,14 @@ function edit(req, res) {
 function update(req, res) {
   Post.findById(req.params.id, function(err, post) {
     post.content = req.body.content;
-    post.save(function(err) {
-      res.redirect(`/posts/${post._id}`);
+    if (post.author._id.equals(req.user._id)) { 
+      post.save(function(err) {
+      res.redirect(`/posts/${post._id}`)
     });
+    } else {
+      res.redirect(`/posts/${post._id}`)
+  }
   });
 }
+
+

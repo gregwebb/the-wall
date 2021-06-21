@@ -20,12 +20,25 @@
                 <div class="post-content">
                     <%= p.content %>
                 </div>
-                <div class="post-links">
-                    <a href ="/posts/<%= p._id %>" class="postlinks"><%= p.comments.length %> Comments</a>    
-                    <a href ="/posts/<%= p._id %>" class="postlinks">View Post</a>    
+                <div class="post-links">  
+                    <a href ="/posts/<%= p._id %>" class="postlinks">View Post (<%= p.comments.length %> Comments)</a>    
                 </div>
             </div>
             <br>
         <% }); %>
+        <div class="pages">
+        <% if (pages > 0) { %>
+            <ul class="pages-list">
+                <% if (page == 1) { %>
+                <% } else { %>
+                    <li><a href="/posts/page/<%= +page - 1 %>">Previous</a></li>
+                <% } %>
+                <% if (page == pages) { %>
+                <% } else { %>
+                    <li><a href="/posts/page/<%= +page + 1 %>">Next</a></li>
+                <% } %>
+            </ul>
+        </div>
+        <% } %>
     </div>
 </body>

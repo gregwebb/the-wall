@@ -25,6 +25,11 @@
       <% post.comments.forEach(function(c) { %>
         <div class="comment">
           <%= c.content %>
+          <div class="delete-comment">
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+              <input type="submit" class="action-button" value="Delete Comment">
+            </form>  
+          </div>
           <p class="comment-details"> Posted By: <a href ="#" ><%= c.author.username  %></a> at <%=c.createdAt%></p>
         </div>
       <% }); %>

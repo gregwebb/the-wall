@@ -6,7 +6,8 @@ module.exports = {
   index,
   show,
   new: newComment,
-  create
+  create,
+  delete: deleteComment,
 };
 
 function index(req, res) {
@@ -34,4 +35,16 @@ async function create(req, res) {
   } catch (err) {
       res.send(err)
   }   
+}
+
+
+
+function deleteComment(req, res) {
+  Post.findOne({'comments._id': req.params.id}, function(err, post) {
+    const commentSubdoc = post.comments.id(req.params.id);
+    commentSubdoc.remove();
+    post.save(function(err) {
+      res.redirect(`/posts/${post._id}`);
+    });
+  });
 }
