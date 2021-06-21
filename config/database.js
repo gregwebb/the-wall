@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 
 // replace your database connection string here
-mongoose.connect('mongodb://localhost/wall' ,{
+//mongoose.connect('mongodb://localhost/wall' ,{
+//  useNewUrlParser: true,
+//  useUnifiedTopology: true,
+//  useCreateIndex: true
+//});
+
+mongoose.connect(process.env.DATABASE_URL ,{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true

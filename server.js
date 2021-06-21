@@ -10,7 +10,7 @@ var methodOverride = require('method-override');
 var indexRouter = require('./routes/index');
 var postsRouter = require('./routes/posts');
 var commentsRouter = require('./routes/comments');
-
+var likesRouter = require('./routes/likes');
 
 // load the env vars
 require('dotenv').config();
@@ -44,6 +44,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/client', express.static(path.join(__dirname, 'client')));
+
 
 
 // Add this middleware BELOW passport middleware
@@ -56,11 +58,14 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/posts', postsRouter);
 app.use('/', commentsRouter);
+app.use('/', likesRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
   res.status(404).send('Cant find that!');
 });
+
+
 
 module.exports = app;
 

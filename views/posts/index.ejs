@@ -15,14 +15,27 @@
         <% posts.forEach(function(p) { %>
             <div class="post">
                 <div class="post-attributes">
-                    Posted By: <a href ="#"><%= p.author.username %></a> at <%= p.createdAt %>
+                    Posted By: <a href ="#"><%= p.author.username %></a> <%= p.createdAt.toDateString() %>
                 </div>
                 <div class="post-content">
+               
                     <%= p.content %>
                 </div>
-                <div class="post-links">  
+               
+                  
+                
+                
+                <div class="post-links-container">  
+                    <div class="like-container">
+                        <form action="/posts/<%= p._id %>/like" method="POST">
+                            <input type="hidden" name="liked" value="<%p._id %>">
+                            <input type="submit" class="like-button" value="👍 <%=p.likes.length%>">
+                          </form> 
+                    </div>
+                    <div class="post-links">
                     <a href ="/posts/<%= p._id %>" class="postlinks">View Post (<%= p.comments.length %> Comments)</a>    
                 </div>
+            </div>
             </div>
             <br>
         <% }); %>
@@ -42,3 +55,4 @@
         <% } %>
     </div>
 </body>
+

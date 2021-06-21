@@ -1,7 +1,7 @@
 body {
   padding: 5px 5px 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #8f81f8;
+  background-color: #598dee;
   
 }
 
@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #598dee;
   text-decoration: none;
 }
 
@@ -22,7 +22,8 @@ a {
   padding: 5px;
   border: 2px;
   border-style: dashed;
-  border-color: lightseagreen;
+  border-color: #598dee;
+  padding-bottom: 30px;
   
 }
 
@@ -31,18 +32,13 @@ h1 {
 }
 
 .post-links {
-  font-size: x-small;
-  text-align: right;
+ width: 140px;
+ float: right;
 }
 
-.postlinks {
-  text-decoration: none;
-  margin-right: 10px;
-  display: inline-block;
-}
 
 nav {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 #index-post {
@@ -68,8 +64,7 @@ nav {
 .navlinks {
   position: relative;
   float: right;
-  padding-right:0px;
-  padding-left: 30px;
+  padding-right:5px;
   color: cornflowerblue;
   text-decoration: none;
 }
@@ -96,15 +91,17 @@ nav {
 .nav {
   position: relative;
   float: right;
-  background-color: slateblue;
+  background-color: rgb(63, 96, 204);
   color: whitesmoke;
   padding: 3px 9px;
+  width: 80px;
 }
 
-.editprofile {
-  background-color: slateblue;
+.profile-button {
+  background-color: rgb(63, 96, 204);
   color: whitesmoke;
-  padding: 3px 9px;
+  padding: 1px 5px;
+  width: 70px;
 }
 
 .comment {
@@ -175,4 +172,37 @@ padding: 5px;
 
 .pages li {
   display: inline-block;
+}
+
+
+.like-container {
+  width:45px;
+  float: left;
+  font-size: small;
+}
+
+.post-links-container {
+  width: 100%;
+  margin: auto;
+  font-size: x-small;
+  text-decoration: none;
+}
+
+.like-button {
+  height:24px;
+  background-color: #d6f5fa;
+  color: #598dee;
+  font-weight:bold;
+  float:right;
+  border: 0px;
+}
+
+.user{
+float: left;
+display:inline-block;
+width: 175px;
+}
+
+.navigation {
+  float: right;
 }

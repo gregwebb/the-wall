@@ -16,7 +16,8 @@ function(accessToken, refreshToken, profile, cb) {
       // we have a new student via OAuth!
       var newUser = new User({
         username: profile.displayName,
-        googleId: profile.id
+        googleId: profile.id,
+        avatar: profile.photos[0].value,
       });
       newUser.save(function(err) {
         if (err) return cb(err);

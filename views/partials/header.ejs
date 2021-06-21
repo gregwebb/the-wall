@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="javascripts/main.js"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title>The Wall</title>
 </head>
@@ -11,14 +12,19 @@
   <div class="container">
   <h1>The Wall</h1>
   <nav>
+    <div class="user">
     <% if (user) { %>
-      Hello, <%= user.username %>!  <a href="#"><button class="editprofile">Edit Profile</button></a>
-      <a href="/logout" class="navlinks"><button class="nav">Log Out</button></a>
+      Hello, <%= user.username %>!  <a href="#"><button class="profile-button">Profile</button></a>
+      <a href="/logout"><button class="profile-button">Log Out</button></a>
+    </div>
     <% } else { %>
       <a href="/auth/google" class="navlinks"><button class="nav">Login with Google</button></a>
     <% } %>
-    <a href="/posts" class="navlinks"><button class="nav"> Feed </button></a>
+    <div class="navigation">
     <a href="/users" class="navlinks"><button class="nav">  Users </button></a>
+    <a href="/posts" class="navlinks"><button class="nav"> Home </button></a>
+    </div>
   </nav>
   </div>
-    
+
+  

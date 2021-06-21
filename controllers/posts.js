@@ -3,6 +3,7 @@ const Comment = require('../models/post');
 const User = require('../models/user');
 const comments = require('./comments');
 const { post } = require('../server');
+const Like = require('../models/post');
 
 module.exports = {
   index,
@@ -116,5 +117,4 @@ function update(req, res) {
   }
   });
 }
-
 
