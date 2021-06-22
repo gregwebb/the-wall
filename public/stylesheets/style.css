@@ -48,6 +48,7 @@ a {
   background-color: #008CBA;
   color: whitesmoke;
   padding: 8px 16px;
+  -webkit-appearance: none;
 }
 
 .postbox {
@@ -71,6 +72,7 @@ a {
   padding: 3px 9px;
   width: 70px;
   margin-left: 5px;
+  -webkit-appearance: none;
 }
 
 
@@ -179,6 +181,7 @@ text-align: right;
   color: whitesmoke;
   padding: 0;
   margin-left: 15px;
+  -webkit-appearance: none;
 }
 
 #show-form {
