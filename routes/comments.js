@@ -7,3 +7,4 @@ router.post('/posts/:id', commentsCtrl.create);
 router.delete('/comments/:id', commentsCtrl.delete);
 
 module.exports = router;
+
