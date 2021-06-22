@@ -8,10 +8,8 @@ const Like = require('../models/post');
 module.exports = {
   index,
   show,
-  new: newPost,
   create,
   delete: deletePost,
-  edit,
   update
 };
 
@@ -35,12 +33,6 @@ function index(req, res) {
     })
   }
 
-
-  
-
-
-
-
 function show(req, res) {
   Post.findById(req.params.id)
   .populate({
@@ -56,13 +48,6 @@ function show(req, res) {
   })
 }
 
-  
-
-
-function newPost(req, res) {
-  res.render('posts/new', { title: 'Add Post' });
-}
-
 function create(req, res) {
   const post = new Post(req.body);
   post.author = req.user._id;
@@ -72,17 +57,6 @@ function create(req, res) {
     console.log(post);
   });
 }
-
-
-  async function deletePost (req, res) {
-    try {
-        await Post.findByIdAndDelete(req.params.id)
-        res.redirect('/posts')
-    } catch (err) {
-        res.send(err)
-    }
-}
-
 
 function deletePost(req, res) {
   Post.findById(req.params.id, function(err, post) {
@@ -95,14 +69,6 @@ function deletePost(req, res) {
   }
   });
 }
-
-
-function edit(req, res) {
-  Post.findById(req.params.id, function(err, post) {
-    res.render('posts/edit', {post});
-  });
-}
-
 
 function update(req, res) {
   Post.findById(req.params.id, function(err, post) {

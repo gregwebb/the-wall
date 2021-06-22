@@ -4,11 +4,8 @@ const Post = require('../models/post');
 
 module.exports = {
   index,
-  show,
-  new: newComment,
   create,
   delete: deleteComment,
-  edit,
   update
 };
 
@@ -16,14 +13,6 @@ function index(req, res) {
   Comment.find({}, function(err, comments) {
     res.render('comments/index', { title: 'All Comments', comments });
   });
-}
-
-function show(req, res) {
-
-}
-
-function newComment(req, res) {
-  res.render('comments/new', { title: 'Add Comment' });
 }
 
 async function create(req, res) {
@@ -39,8 +28,6 @@ async function create(req, res) {
   }   
 }
 
-
-
 function deleteComment(req, res) {
   Post.findOne({'comments._id': req.params.id}, function(err, post) {
     const commentSubdoc = post.comments.id(req.params.id);
@@ -48,13 +35,6 @@ function deleteComment(req, res) {
     post.save(function(err) {
       res.redirect(`/posts/${post._id}`);
     });
-  });
-}
-
-
-function edit(req, res) {
-  Post.findById(req.params.id, function(err, post) {
-    res.render('comments/edit', {post});
   });
 }
 

@@ -6,24 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script rel='javascripts' src="/javascripts/main.js"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+    </style>
   <title>The Wall</title>
 </head>
-<body>
-  <div class="container">
-  <h1>The Wall</h1>
-  <nav>
-    <div class="user">
-    <% if (user) { %>
-      Hello, <%= user.username %>!  <a href="#"><button class="profile-button">Profile</button></a>
-      <a href="/logout"><button class="profile-button">Log Out</button></a>
-    </div>
-    <% } else { %>
-    <% } %>
-    <div class="navigation">
-    <a href="/users" class="navlinks"><button class="nav">  Users </button></a>
-    <a href="/posts" class="navlinks"><button class="nav"> Home </button></a>
-    </div>
-  </nav>
-  </div>
 
+ 
+  <nav>
+    <h1>The Wall</h1>
+    <% if (user) { %>
+      
+      
+   
+    <a href="/posts" class="navlinks"><button class="nav"> Home </button></a>
+    <a href="/logout"><button class="nav">Log Out</button></a>
+  </nav>
+  
+  <body>
+    <div class="container">
+      <div class="hello">
+      Hello, <%= user.username %>! 
+    </div>
+  </div>
+  <% } else { %>
+    <% } %>
   

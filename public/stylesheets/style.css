@@ -1,15 +1,19 @@
 body {
-  padding: 5px 5px 5px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Calibri", Helvetica, Arial, sans-serif;
   background-color: #598dee;
-  
 }
 
 .container {
   max-width: 600px;
   background-color: #d6f5fa;
-  padding-bottom: 100px;
-  padding:5px 20px 35px;
+  padding:0px 0px 10px;
+  margin: auto;
+}
+
+.content-container {
+  max-width: 600px;
+  background-color: #d6f5fa;
+  padding:10px 10px 10px;
   margin: auto;
 }
 
@@ -19,26 +23,17 @@ a {
 }
 
 .post {
-  padding: 5px;
+  padding: 0px 5px 5px;
   border: 2px;
   border-style: dashed;
   border-color: #598dee;
-  padding-bottom: 35px;
-  
 }
 
-h1 {
-  text-align: center;
-}
 
 .post-links {
- width: 140px;
- float: right;
-}
-
-
-nav {
-  padding-bottom: 20px;
+ font-size: 8pt;
+ display: inline-block;
+ width: 25%;
 }
 
 #index-post {
@@ -46,10 +41,9 @@ nav {
   background-color: #dfe3f7;
   border: 2px;
   resize: none;
+  border: 1px solid #598dee;
 }
-#submit {
-  position: relative;
-  float: right;
+#submit {        
   background-color: #008CBA;
   color: whitesmoke;
   padding: 8px 16px;
@@ -61,24 +55,6 @@ nav {
   max-width: 90%;
 }
 
-.navlinks {
-  position: relative;
-  float: right;
-  padding-right:5px;
-  color: cornflowerblue;
-  text-decoration: none;
-}
-
-.poster {
-  text-align: right;
-  padding-top: 5px;
-  padding-bottom: 15px;
-}
-
-.post-view{
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
 
 .commentbox {
   padding: 10px;
@@ -89,20 +65,14 @@ nav {
 }
 
 .nav {
-  position: relative;
-  float: right;
   background-color: rgb(63, 96, 204);
   color: whitesmoke;
   padding: 3px 9px;
   width: 80px;
+  margin-left: 15px;
 }
 
-.profile-button {
-  background-color: rgb(63, 96, 204);
-  color: whitesmoke;
-  padding: 1px 5px;
-  width: 70px;
-}
+
 
 .comment {
   border: 1px;
@@ -162,9 +132,7 @@ padding: 5px;
 }
 
 .post-buttons {
-  margin-right: 10px;
-  display: flex;
-  float: right;
+  display: inline-flex;
 }
 
 .comment-details {
@@ -186,16 +154,12 @@ padding: 5px;
 
 
 .like-container {
-  width:45px;
+  width: 75%;
   float: left;
-  font-size: small;
 }
 
 .post-links-container {
   width: 100%;
-  margin: auto;
-  font-size: x-small;
-  text-decoration: none;
 }
 
 .like-button {
@@ -207,16 +171,6 @@ padding: 5px;
   border: 0px;
 }
 
-
-.user{
-float: left;
-display:inline-block;
-width: 175px;
-}
-
-.navigation {
-  float: right;
-}
 
 .edit-delete-comment {
 width: 100%;
@@ -233,4 +187,29 @@ width: 100%;
 
 #show-form {
 display: none;
+}
+
+
+::placeholder {
+  color: #598dee;
+  font-size: 1em;
+}
+
+nav {
+  padding:0px 0px 5px;
+  max-width: 600px;
+  background-image: url("https://www.publicdomainpictures.net/pictures/310000/nahled/white-brick-wall-15674449685iG.jpg");
+}
+
+
+.hello {
+  margin: 15px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 36pt;
+  color: #120b6b;
 }
