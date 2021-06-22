@@ -3,7 +3,6 @@ const User = require('../models/user');
 const Post = require('../models/post');
 const Like = require('../models/post');
 const { post } = require('../routes');
-const comment = require('../../the-wall/models/comment');
 
 module.exports = {
   
