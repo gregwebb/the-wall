@@ -8,6 +8,8 @@ module.exports = {
   new: newComment,
   create,
   delete: deleteComment,
+  edit,
+  update
 };
 
 function index(req, res) {
@@ -46,5 +48,25 @@ function deleteComment(req, res) {
     post.save(function(err) {
       res.redirect(`/posts/${post._id}`);
     });
+  });
+}
+
+
+function edit(req, res) {
+  Post.findById(req.params.id, function(err, post) {
+    res.render('comments/edit', {post});
+  });
+}
+
+function update(req, res) {
+  Post.findById(req.params.id, function(err, post) {
+    post.content = req.body.content;
+    if (post.author._id.equals(req.user._id)) { 
+      post.save(function(err) {
+      res.redirect(`/posts/${post._id}`)
+    });
+    } else {
+      res.redirect(`/posts/${post._id}`)
+  }
   });
 }

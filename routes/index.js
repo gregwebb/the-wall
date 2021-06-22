@@ -13,13 +13,23 @@ router.get('/auth/google', passport.authenticate(
 ));
 
 // Google OAuth callback route
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect : '/posts', // where do you want the client to go after you login 
-    failureRedirect : '/posts' // where do you want the client to go if login fails
-  }
-));
+router.get('/oauth2callback',
+(req, res, next) => {
+
+  // Save the url of the user's current page so the app can redirect back to it after authorization
+  if (req.query.return) {req.session.oauth2return = req.query.return;}
+  next();
+},
+
+// Start OAuth 2 flow using Passport.js
+
+passport.authenticate('google'), (req, res) => {
+  // Redirect back to the original page, if any
+  const redirect = req.session.oauth2return || '/';
+  delete req.session.oauth2return;
+  res.redirect(redirect);
+}
+);
 
 // OAuth logout route
 router.get('/logout', function(req, res){

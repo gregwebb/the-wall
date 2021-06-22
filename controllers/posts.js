@@ -53,7 +53,6 @@ function show(req, res) {
   })
   .exec(function(err, post) {
     res.render('posts/show', {post})
-    console.log(post)
   })
 }
 

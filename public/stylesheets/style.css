@@ -23,7 +23,7 @@ a {
   border: 2px;
   border-style: dashed;
   border-color: #598dee;
-  padding-bottom: 30px;
+  padding-bottom: 35px;
   
 }
 
@@ -105,11 +105,15 @@ nav {
 }
 
 .comment {
-  border: 2px;
-  background-color: lightblue;
+  border: 1px;
+  background-color: #dfe3f7;
   margin: auto;
-  
+  border-style: dashed;
+  border-color: #598dee;
+  padding-left: 10px;
+  padding-top: 10px;
 }
+
 
 .comment-view {
   width:85%;
@@ -140,6 +144,8 @@ padding: 5px;
   background-color: #008CBA;
   color: whitesmoke;
   padding: 0;
+  margin-right: 5px;
+  width: 90px;
 }
 
 .login-button {
@@ -158,12 +164,16 @@ padding: 5px;
 .post-buttons {
   margin-right: 10px;
   display: flex;
+  float: right;
 }
 
 .comment-details {
   font-size: xx-small;
   text-align: right;
   margin-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  width:80%;
 }
 
 .pages {
@@ -193,9 +203,10 @@ padding: 5px;
   background-color: #d6f5fa;
   color: #598dee;
   font-weight:bold;
-  float:right;
+  float:left;
   border: 0px;
 }
+
 
 .user{
 float: left;
@@ -205,4 +216,21 @@ width: 175px;
 
 .navigation {
   float: right;
+}
+
+.edit-delete-comment {
+width: 100%;
+}
+
+.action-button-comment {
+  width: 45px;
+  background-color: #008CBA;
+  color: whitesmoke;
+  padding: 0;
+  float: right;
+  margin-right: 5px;
+}
+
+#show-form {
+display: none;
 }

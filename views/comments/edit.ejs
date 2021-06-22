@@ -3,9 +3,9 @@
         <%- include('../partials/header') %>
         <div class="postbox">
             <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-                <textarea rows="5" id="index-post" type="text" name="content" maxlength="400"></textarea>
-        <input id="submit" type="submit" value="Add Comment">
-      </form> 
+                <textarea rows="5" id="index-post" type="text" name="content"><%= post.content %></textarea>
+                <input id="submit" type="submit" value="Update Post">
+            </form> 
         </div>
     <% } else{ %>  
         <%- include('../partials/splash') %>

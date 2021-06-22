@@ -10,6 +10,7 @@ const likeSchema = new Schema({
 const commentSchema = new Schema({
   content: String,
   author: {type: Schema.Types.ObjectId, ref: 'User'},
+  likes: [likeSchema]
 }, {
     timestamps: true
   }

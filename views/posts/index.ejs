@@ -34,8 +34,15 @@
                     </div>
                     <div class="post-links">
                     <a href ="/posts/<%= p._id %>" class="postlinks">View Post (<%= p.comments.length %> Comments)</a>    
+                    <button class="action-button-comment" onclick="showForm()">Reply</button>
                 </div>
             </div>
+            <div id="show-form">
+                <form id="new-form" action="/posts/<%= p._id %>/" method="POST">
+                    <textarea rows="5" id="index-post" type="text" name="content" placeholder="Reply to post.. (400 char limit)" maxlength="400"></textarea>
+                    <input id="submit" type="submit" value="Add Comment">
+                  </form> 
+              </div>
             </div>
             <br>
         <% }); %>
