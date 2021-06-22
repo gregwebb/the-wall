@@ -24,7 +24,7 @@
       <% } else if (post.author._id.equals(user._id)) { %>
         <div class="edit-delete">
           <div class="edit">
-            <button class="action-button" onclick="showForm()">Edit</button>
+            <button type="submit" class="action-button" onclick="showForm()">Edit</button>
           </div>
           <div class="delete">
          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
