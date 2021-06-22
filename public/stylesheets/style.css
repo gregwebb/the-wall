@@ -133,7 +133,7 @@ padding: 5px;
 }
 
 .post-buttons {
-  width: 30%
+  width: 30%;
   margin-left: auto; 
   margin-right: 10px;
 }
@@ -259,4 +259,12 @@ h1 {
 
  .delete {
   text-align: right;
+ }
+
+ .failwhale {
+   text-align: center;
+ }
+
+ #whale{
+   width: 80%;
  }

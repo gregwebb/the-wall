@@ -9,6 +9,7 @@ router.get('/:id', postsCtrl.show);
 router.post('/', postsCtrl.create);
 router.delete('/:id', postsCtrl.delete);
 router.put('/:id', postsCtrl.update)
-router.get('/posts', postsCtrl.search);
+router.get('/search/:query', postsCtrl.search);
+router.post('/search', postsCtrl.query);
 
 module.exports = router;
