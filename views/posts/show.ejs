@@ -9,12 +9,11 @@
     <div class="content-container">
     <div class="post">
       <div class="post-attributes">
-        Posted By: <a href ="#"><%= post.author.username %></a> at <%= post.createdAt %>
+        Posted By: <a href ="#"><%= post.author.username %></a> at <%= post.createdAt.toDateString() %>
       </div>
       <div class="post-content">
         <%= post.content %>
-      </div>
-      <div class="post-links-container">  
+      </div> 
         <div class="like-container">
           <form action="/posts/<%= post._id %>/like" method="POST">
               <input type="hidden" name="liked" value="<%post._id %>">
@@ -23,40 +22,42 @@
         </div>
       <% if(typeof user === "undefined"){ %>
       <% } else if (post.author._id.equals(user._id)) { %>
-        <div class="post-buttons">
-            <button class="action-button" onclick="showForm()">Edit Post</button>
-          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-            <input type="submit" class="action-button" value="Delete Post">
+        <div class="edit-delete">
+          <div class="edit">
+            <button class="action-button" onclick="showForm()">Edit</button>
+          </div>
+          <div class="delete">
+         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <input type="submit" class="action-button" value="Delete">
           </form>  
+        </div>
         </div>
       </div>
       <% } %> 
-    </div>
-    
     <div id="show-form">
       <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
           <textarea rows="5" id="index-post" type="text" name="content" maxlength="400"><%= post.content %></textarea>
   <input id="submit" type="submit" value="Update Post">
 </form> 
   </div>
+
     <div class="comment-view">
       <h4>Comments: (<%= post.comments.length %>) </h4>
       <% post.comments.forEach(function(c) { %>
         <div class="comment">
+          <div class="post-attributes">
+            Posted By: <a href ="#" ><%= c.author.username  %></a> at <%=c.createdAt.toDateString()%>
+           </div>
           <%= c.content %>
           <% if(typeof user === "undefined"){ %>
-
             <% } else if (c.author._id.equals(user._id)) { %>
               <div class="edit-delete-comment">
                 <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                  <input type="submit" class="action-button-comment" value="Delete">
+                  <input type="submit" class="action-button" value="Delete">
                 </form>  
               </div>
               <% } %> 
-            <div class="comment-details">
-            
-     Posted By: <a href ="#" ><%= c.author.username  %></a> at <%=c.createdAt.toDateString()%>
-    </div>
+
         </div>
         <br/>
       <% }); %>

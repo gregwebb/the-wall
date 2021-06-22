@@ -32,8 +32,9 @@ a {
 
 .post-links {
  font-size: 8pt;
- display: inline-block;
- width: 25%;
+ margin-left: auto; 
+ margin-right: 10px;
+ text-align: right;
 }
 
 #index-post {
@@ -68,8 +69,8 @@ a {
   background-color: rgb(63, 96, 204);
   color: whitesmoke;
   padding: 3px 9px;
-  width: 80px;
-  margin-left: 15px;
+  width: 70px;
+  margin-left: 5px;
 }
 
 
@@ -80,7 +81,7 @@ a {
   margin: auto;
   border-style: dashed;
   border-color: #598dee;
-  padding: 5px;
+  padding: 0px 5px 5px;
 }
 
 
@@ -112,8 +113,7 @@ padding: 5px;
   background-color: #008CBA;
   color: whitesmoke;
   padding: 0;
-  margin-right: 5px;
-  width: 90px;
+  width: 70px;
 }
 
 .login-button {
@@ -130,7 +130,9 @@ padding: 5px;
 }
 
 .post-buttons {
-  width: 100%;
+  width: 30%
+  margin-left: auto; 
+  margin-right: 10px;
 }
 
 .comment-details {
@@ -151,13 +153,9 @@ padding: 5px;
 }
 
 
-.like-container {
-  width: 75%;
-  float: left;
-}
-
 .post-links-container {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .like-button {
@@ -171,16 +169,15 @@ padding: 5px;
 
 
 .edit-delete-comment {
-width: 100%;
+text-align: right;
 }
 
 .action-button-comment {
-  width: 45px;
+  width: 50px;
   background-color: #008CBA;
   color: whitesmoke;
   padding: 0;
-  float: right;
-  margin-right: 5px;
+  margin-left: 15px;
 }
 
 #show-form {
@@ -218,17 +215,43 @@ h1 {
 }
 
 .nav-buttons {
-  width: 45%;
+  width: 60%;
 
 }
 
 .nav-search {
-  width: 55%;
+  width: 40%;
 }
 
 .search-button {
-  background-color: rgb(63, 96, 204);
-  color: whitesmoke;
-  padding: 0px 1px;
-  width: 50px;
+ display: none;
 }
+
+#searchbar {
+  width: 120px;
+}
+
+.edit-delete {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-right: 10px;
+  width: 100%;
+  text-align: right;
+ }
+
+ .edit {
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex:  1 1 auto;
+  -webkit-flex:  1 1 auto;
+  -ms-flex:  1 1 auto;
+  flex:  1 1 auto;
+  text-align: right;
+  margin-right: 10px;
+ }
+
+ .delete {
+  text-align: right;
+ }
