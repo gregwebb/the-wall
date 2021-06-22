@@ -88,9 +88,9 @@ function update(req, res) {
 
     
 function search(req, res) {
-  const perPage = 5
+  const perPage = 500;
   const page = req.params.page || 1
-  const regex = new RegExp(req.params.query)
+  const regex = new RegExp(req.params.query, "i")
 
   Post.find(
     {content: {$regex: regex}})
