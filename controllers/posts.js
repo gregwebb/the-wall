@@ -10,7 +10,8 @@ module.exports = {
   show,
   create,
   delete: deletePost,
-  update
+  update,
+  search
 };
 
 function index(req, res) {
@@ -83,3 +84,20 @@ function update(req, res) {
   });
 }
 
+
+    
+function search(req, res) {
+  Post.find(
+    { likes: { gt: 1 }})
+  .populate({
+    path: 'author',
+    model: 'User'
+  })
+  .exec(function(err, posts) {
+      res.render('posts/index', {
+        posts
+      })
+    })
+  }
+
+ 

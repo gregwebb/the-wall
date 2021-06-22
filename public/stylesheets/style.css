@@ -60,7 +60,7 @@ a {
   padding: 10px;
   margin-top: 30px;
   margin-bottom: 20px;
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 
@@ -80,15 +80,13 @@ a {
   margin: auto;
   border-style: dashed;
   border-color: #598dee;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding: 5px;
 }
 
 
 .comment-view {
-  width:85%;
+  width:95%;
   margin:auto;
-  margin-bottom: 20px;
 }
 
 .post-attributes{
@@ -121,7 +119,7 @@ padding: 5px;
 .login-button {
   background-color: slateblue;
   color: whitesmoke;
-  padding: 25px 35px;
+  padding: 35px 40px;
 }
 
 .login {
@@ -132,7 +130,7 @@ padding: 5px;
 }
 
 .post-buttons {
-  display: inline-flex;
+  width: 100%;
 }
 
 .comment-details {
@@ -212,4 +210,25 @@ h1 {
   font-family: 'Cabin Sketch', cursive;
   font-size: 36pt;
   color: #120b6b;
+}
+
+.nav-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-buttons {
+  width: 45%;
+
+}
+
+.nav-search {
+  width: 55%;
+}
+
+.search-button {
+  background-color: rgb(63, 96, 204);
+  color: whitesmoke;
+  padding: 0px 1px;
+  width: 50px;
 }
