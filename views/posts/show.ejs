@@ -24,7 +24,10 @@
       <% } else if (post.author._id.equals(user._id)) { %>
         <div class="edit-delete">
           <div class="edit">
-            <button type="submit" class="action-button" onclick="showForm()">Edit</button>
+           
+            <form action="/posts/<%= post._id %>/edit" method="GET">
+            <input type="submit" class="action-button" value="Edit">
+            </form>
           </div>
           <div class="delete">
          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
@@ -33,13 +36,9 @@
         </div>
         </div>
       </div>
+
       <% } %> 
-    <div id="show-form">
-      <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-          <textarea rows="5" id="index-post" type="text" name="content" maxlength="400"><%= post.content %></textarea>
-  <input id="submit" type="submit" value="Update Post">
-</form> 
-  </div>
+ 
 
     <div class="comment-view">
       <h4>Comments: (<%= post.comments.length %>) </h4>
@@ -57,7 +56,6 @@
                 </form>  
               </div>
               <% } %> 
-
         </div>
         <br/>
       <% }); %>
@@ -75,5 +73,3 @@
   </div>
   </div>
 </body>
-
-

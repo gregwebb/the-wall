@@ -8,6 +8,7 @@ const Like = require('../models/post');
 module.exports = {
   index,
   show,
+  edit,
   create,
   delete: deletePost,
   update,
@@ -59,6 +60,15 @@ function create(req, res) {
     console.log(post);
   });
 }
+
+function edit(req, res) {
+  Post.findById(req.params.id)
+  .exec(function(err, post) {
+    res.render('posts/edit', {post})
+  })
+}
+
+
 
 function deletePost(req, res) {
   Post.findById(req.params.id, function(err, post) {
@@ -113,3 +123,6 @@ function search(req, res) {
     const query = req.body.search;
       res.redirect(`/posts/search/${query}`);
     }
+
+
+    

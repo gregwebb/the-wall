@@ -4,14 +4,14 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 900px;
   background-color: #d6f5fa;
   padding:0px 0px 10px;
   margin: auto;
 }
 
 .content-container {
-  max-width: 600px;
+  max-width: 900px;
   background-color: #d6f5fa;
   padding:10px 10px 10px;
   margin: auto;
@@ -185,8 +185,12 @@ text-align: right;
   -webkit-appearance: none;
 }
 
-#show-form {
+.show-form {
 display: none;
+}
+
+.edit-post {
+  display: block;
 }
 
 
@@ -197,8 +201,8 @@ display: none;
 
 nav {
   padding:0px 0px 5px;
-  max-width: 600px;
-  background-image: url("https://www.publicdomainpictures.net/pictures/310000/nahled/white-brick-wall-15674449685iG.jpg");
+  max-width: 900px;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/612/547/823/wall-brick-texture-units-wallpaper-preview.jpg");
 }
 
 
@@ -210,7 +214,7 @@ h1 {
   text-align: center;
   font-weight: 900;
   font-family: 'Cabin Sketch', cursive;
-  font-size: 36pt;
+  font-size: 50pt;
   color: #120b6b;
 }
 
@@ -233,7 +237,8 @@ h1 {
 }
 
 #searchbar {
-  width: 120px;
+  width: 90%;
+  margin-right: 10px;
 }
 
 .edit-delete {

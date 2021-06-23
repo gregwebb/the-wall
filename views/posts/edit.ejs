@@ -1,0 +1,53 @@
+<div class="container">
+    <% if(user){ %>
+      <%- include('../partials/header') %>
+      <% } else{ %>  
+        <%- include('../partials/splash') %>
+    <% } %>
+    <div class="content-container">
+        <div class="post">
+            <div class="post-attributes">
+              Posted By: <a href ="#"><%= post.author.username %></a> at <%= post.createdAt.toDateString() %>
+            </div>
+            <div class="post-content">
+              <%= post.content %>
+            </div> 
+              <div class="like-container">
+                <form action="/posts/<%= post._id %>/like" method="POST">
+                    <input type="hidden" name="liked" value="<%post._id %>">
+                    <input type="submit" class="like-button" value="👍 <%=post.likes.length%>">
+                  </form> 
+              </div>
+            <% if(typeof user === "undefined"){ %>
+            <% } else if (post.author._id.equals(user._id)) { %>
+              <div class="edit-delete">
+                <div class="edit">
+                 
+                  <form action="/posts/<%= post._id %>/edit" method="GET">
+                  <input type="submit" class="action-button" value="Edit">
+                  </form>
+                </div>
+                <div class="delete">
+               <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                  <input type="submit" class="action-button" value="Delete">
+                </form>  
+              </div>
+              </div>
+            </div>
+      
+            
+
+
+
+
+<div id="edit-post">
+    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+        <textarea rows="5" id="index-post" type="text" name="content" maxlength="400"><%= post.content %></textarea>
+<input id="submit" type="submit" value="Update Post">
+</form> 
+</div>
+<% } %> 
+</body>
+
+</div>
+</div>
