@@ -53,7 +53,7 @@ a {
 
 .postbox {
   margin: auto;
-  padding-bottom: 60px;
+  padding-bottom: 20px;
   max-width: 90%;
 }
 
@@ -211,7 +211,7 @@ header {
 
 
 .hello {
-  margin: 15px;
+  padding:0px 25px 0px;
 }
 
 h1 {
