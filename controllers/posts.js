@@ -12,7 +12,7 @@ module.exports = {
   create,
   delete: deletePost,
   update,
-  search,
+  search
 };
 
 function index(req, res) {
@@ -95,7 +95,7 @@ function update(req, res) {
 }
 
   function search(req, res) {
-    const regex = req.body.search;
+    const regex = new RegExp(req.body.search, "i")
     Post.find(
       {content: {$regex: regex}})
     .populate({
@@ -103,6 +103,7 @@ function update(req, res) {
       model: 'User'
     })
     .exec(function(err, posts) {
+      console.log(posts);
         res.render('posts/search', {posts})
         })
     }
