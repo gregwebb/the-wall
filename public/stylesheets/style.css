@@ -220,6 +220,8 @@ h1 {
   font-family: 'Cabin Sketch', cursive;
   font-size: 40pt;
   color: #120b6b;
+  margin: auto;
+  padding: 10px;
 }
 
 .nav-items {
