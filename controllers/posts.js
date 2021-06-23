@@ -13,7 +13,6 @@ module.exports = {
   delete: deletePost,
   update,
   search,
-  query
 };
 
 function index(req, res) {
@@ -95,34 +94,16 @@ function update(req, res) {
   });
 }
 
-
-    
-function search(req, res) {
-  const perPage = 500;
-  const page = req.params.page || 1
-  const regex = new RegExp(req.params.query, "i")
-
-  Post.find(
-    {content: {$regex: regex}})
-  .populate({
-    path: 'author',
-    model: 'User'
-  })
-  .skip((perPage * page) - perPage)
-  .limit(perPage)
-  .exec(function(err, posts) {
-    Post.count().exec(function(err, count) {
-      if (err) return next(err)
-      res.render('posts/index', {
-        posts, page, pages: Math.ceil(count / perPage)})
-      })
+  function search(req, res) {
+    const regex = req.body.search;
+    Post.find(
+      {content: {$regex: regex}})
+    .populate({
+      path: 'author',
+      model: 'User'
     })
-  }
- 
-  function query(req, res) {
-    const query = req.body.search;
-      res.redirect(`/posts/search/${query}`);
+    .exec(function(err, posts) {
+        res.render('posts/search', {posts})
+        })
     }
-
-
-    
+  

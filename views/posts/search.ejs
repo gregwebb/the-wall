@@ -3,22 +3,6 @@
     <div class="container">
         <% if(user){ %>
             <%- include('../partials/header') %>
-            <div class="hello">
-                Hello, <%= user.username %>! 
-              </div>
-              <% if (page == 1) { %>
-                <div class="nav-search">
-                  <form class="form-inline" action="posts/search" method="POST">
-                    <input id="searchbar" placeholder="Search Posts" name="search">
-                    <button type="submit" class="search-button">
-                        <img src="/images/search.png">
-                    </button>
-                    
-                  </form>
-                </div>
-                <% } else { %>
-                  <% } %>
-
             <% } else{ %>  
                 <%- include('../partials/splash') %>
             <% } %>
@@ -63,20 +47,6 @@
             </div>
             <br>
         <% }); %>
-        <div class="pages">
-        <% if (pages > 0) { %>
-            <ul class="pages-list">
-                <% if (page == 1) { %>
-                <% } else { %>
-                    <li><a href="/posts/page/<%= +page - 1 %>">Previous</a></li>
-                <% } %>
-                <% if (page == pages) { %>
-                <% } else { %>
-                    <li><a href="/posts/page/<%= +page + 1 %>">Next</a></li>
-                <% } %>
-            </ul>
-        </div>
-        <% } %>
         
     </div>
 </div>

@@ -9,7 +9,7 @@
     <div class="content-container">
     <div class="post">
       <div class="post-attributes">
-        Posted By: <a href ="#"><%= post.author.username %></a> at <%= post.createdAt.toDateString() %>
+        Posted By: <%= post.author.username %> at <%= post.createdAt.toDateString() %>
       </div>
       <div class="post-content">
         <%= post.content %>
@@ -45,7 +45,7 @@
       <% post.comments.forEach(function(c) { %>
         <div class="comment">
           <div class="post-attributes">
-            Posted By: <a href ="#" ><%= c.author.username  %></a> at <%=c.createdAt.toDateString()%>
+            Posted By: <%= c.author.username  %> at <%=c.createdAt.toDateString()%>
            </div>
           <%= c.content %>
           <% if(typeof user === "undefined"){ %>

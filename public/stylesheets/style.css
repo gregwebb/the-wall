@@ -40,7 +40,6 @@ a {
 #index-post {
   width: 100%;
   background-color: #dfe3f7;
-  border: 2px;
   resize: none;
   border: 1px solid #598dee;
 }
@@ -95,7 +94,7 @@ a {
 .post-attributes{
   text-align: left;
   font-size: x-small;
-  padding: 5px;
+  padding: 5px 0px 5px;
 }
 
 .post-content {
@@ -235,16 +234,35 @@ h1 {
 }
 
 .nav-search {
-  width: 40%;
+  width: 25%;
+  margin: auto;
 }
 
 .search-button {
- display: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.form-inline {
+  display: flex;
+  flex-direction: row;
+}
+
+ .search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
 }
 
 #searchbar {
-  width: 90%;
-  margin-right: 5px;
+  margin: auto;
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border-radius: 100px;
+  outline: none;
+  border: 1px solid #598dee;
 }
 
 .edit-delete {
@@ -279,3 +297,5 @@ h1 {
  #whale{
    width: 80%;
  }
+
+ 
