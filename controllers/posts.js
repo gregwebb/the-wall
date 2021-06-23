@@ -12,14 +12,18 @@ module.exports = {
   create,
   delete: deletePost,
   update,
-  search
+  search,
+  sortLikes,
+  sortComments,
 };
 
 function index(req, res) {
   const perPage = 5
   const page = req.params.page || 1
+  const sortBy = { createdAt: -1 }
 
   Post.find({})
+  .sort(sortBy)
   .populate({
     path: 'author',
     model: 'User'
@@ -107,4 +111,32 @@ function update(req, res) {
         res.render('posts/search', {posts})
         })
     }
-  
+
+
+    function sortLikes(req, res) {
+      const sortBy = { likes: -1 }
+      Post.find({})
+      .sort(sortBy)
+      .populate({
+        path: 'author',
+        model: 'User'
+      })
+      .exec(function(err, posts) {
+        console.log(posts);
+          res.render('posts/liked', {posts})
+          })
+      }
+      function sortComments(req, res) {
+        const sortBy = { comments: -1 }
+        Post.find({})
+        .sort(sortBy)
+        .populate({
+          path: 'author',
+          model: 'User'
+        })
+        .exec(function(err, posts) {
+          console.log(posts);
+            res.render('posts/commented', {posts})
+            })
+        }
+    

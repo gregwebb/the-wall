@@ -11,5 +11,7 @@ router.post('/', postsCtrl.create);
 router.delete('/:id', postsCtrl.delete);
 router.put('/:id', postsCtrl.update)
 router.post('/search/', postsCtrl.search);
+router.post('/liked/', postsCtrl.sortLikes);
+router.post('/commented/', postsCtrl.sortComments);
 
 module.exports = router;

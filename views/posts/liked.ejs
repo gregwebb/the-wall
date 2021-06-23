@@ -3,41 +3,6 @@
     <div class="container">
         <% if(user){ %>
             <%- include('../partials/header') %>
-            <div class="hello">
-                Hello, <%= user.username %>! 
-
-
-              </div>
-
-              <% if (page == 1) { %>
-
-                <div class="post-view-links">
-                    <div class="space"></div>
-                    <div class="sort-div">
-                    <form action="posts/liked" method="POST">
-                        <input type="hidden">
-                        <button class="sort" type="submit">Most Liked</button>            
-                      </form>
-                    </div>
-                    <div class="sort-div">
-                      <form action="posts/commented" method="POST">
-                        <input type="hidden">
-                        <button class="sort" type="submit">Most Commented</button>            
-                      </form> 
-                    </div>
-                    <div class="space"></div>
-                  </div>
-                <div class="nav-search">
-                  <form class="form-inline" action="posts/search" method="POST">
-                    <input id="searchbar" placeholder="Search Posts" name="search">
-                    <button type="submit" class="search-button">
-                        <img src="/images/search.png">
-                    </button>            
-                  </form>
-                </div>
-                <% } else { %>
-                  <% } %>
-
             <% } else{ %>  
                 <%- include('../partials/splash') %>
             <% } %>
@@ -51,9 +16,7 @@
             </div>
             <% } else{ %>  
                 <% } %>
-
-                <p class="sorted">Order: Created Date (Descending)</p>
-
+                <p class="sorted">Most Liked Posts (Descending)</p>
         <% posts.forEach(function(p) { %>
             <div class="post">
                 <div class="post-attributes">
@@ -85,20 +48,6 @@
             </div>
             <br>
         <% }); %>
-        <div class="pages">
-        <% if (pages > 0) { %>
-            <ul class="pages-list">
-                <% if (page == 1) { %>
-                <% } else { %>
-                    <li><a href="/posts/page/<%= +page - 1 %>">Previous</a></li>
-                <% } %>
-                <% if (page == pages) { %>
-                <% } else { %>
-                    <li><a href="/posts/page/<%= +page + 1 %>">Next</a></li>
-                <% } %>
-            </ul>
-        </div>
-        <% } %>
         
     </div>
 </div>
