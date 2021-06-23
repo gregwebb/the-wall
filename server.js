@@ -60,7 +60,7 @@ app.use('/posts', postsRouter);
 app.use('/', commentsRouter);
 app.use('/', likesRouter);
 app.use('/comments', commentsRouter);
-app.use('/search', postsRouter);
+
 
 // invalid request, send 404 page
 app.use(function(req, res) {

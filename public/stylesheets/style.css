@@ -200,6 +200,10 @@ display: none;
 }
 
 nav {
+  padding:0px 10px 0px;
+}
+
+header {
   padding:0px 0px 5px;
   max-width: 900px;
   background-image: url("https://c4.wallpaperflare.com/wallpaper/612/547/823/wall-brick-texture-units-wallpaper-preview.jpg");
@@ -238,7 +242,7 @@ h1 {
 
 #searchbar {
   width: 90%;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .edit-delete {
