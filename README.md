@@ -49,4 +49,5 @@ https://trello.com/b/jYUHEyLn/the-wall
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/indexview.jpg?raw=true" width=200px alt="Splash Page">
 
 | Post View (Post W/Comments) |
+
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/postview.jpg?raw=true" width=200px alt="Splash Page">
