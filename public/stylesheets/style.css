@@ -46,13 +46,14 @@ a {
 #submit {        
   background-color: #008CBA;
   color: whitesmoke;
-  padding: 8px 16px;
+  padding: 4px 20px;
+  margin-top: 5px;
   -webkit-appearance: none;
 }
 
 .postbox {
   margin: auto;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   max-width: 90%;
 }
 
@@ -234,7 +235,7 @@ h1 {
 }
 
 .nav-search {
-  width: 40%;
+  width: 60%;
   margin: auto;
   padding-top: 10px;
 }
@@ -252,16 +253,16 @@ h1 {
 }
 
  .search-button img {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   object-fit: cover;
 }
 
 #searchbar {
   margin: auto;
   width: 100%;
-  padding: 10px 35px 10px 15px;
-  border-radius: 100px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 50px;
   outline: none;
   border: 1px solid #598dee;
 }
