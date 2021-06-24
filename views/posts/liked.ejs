@@ -29,11 +29,12 @@
                
                 <div class="post-links-container">  
                     <div class="like-container">
-                        <form action="/posts/<%= p._id %>/like" method="POST">
-                            <input type="hidden" name="liked" value="<%p._id %>">
-                            <input type="submit" class="like-button" value="👍 <%=p.likes.length%>">
-                          </form> 
-                    </div>
+                        <input
+                          type="submit"
+                          class="like-button"
+                          value="👍 <%=p.likes.length%>"
+                        />
+                      </div>
                     <div class="post-links">
                     <a href ="/posts/<%= p._id %>" class="postlinks">View Post (<%= p.comments.length %> Comments)</a>
                     <button name="<%= p._id %>" class="action-button-comment">Reply</button>    

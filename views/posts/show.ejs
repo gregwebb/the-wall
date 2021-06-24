@@ -1,75 +1,78 @@
-
 <body>
   <div class="container">
-    <% if(user){ %>
-      <%- include('../partials/header') %>
-      <% } else{ %>  
-        <%- include('../partials/splash') %>
-    <% } %>
+    <% if(user){ %> <%- include('../partials/header') %> <% } else{ %> <%-
+    include('../partials/splash') %> <% } %>
     <div class="content-container">
-    <div class="post">
-      <div class="post-attributes">
-        Posted By: <%= post.author.username %> at <%= post.createdAt.toDateString() %>
-      </div>
-      <div class="post-content">
-        <%= post.content %>
-      </div> 
+      <div class="post">
+        <div class="post-attributes">
+          Posted By: <%= post.author.username %> at <%=
+          post.createdAt.toDateString() %>
+        </div>
+        <div class="post-content"><%= post.content %></div>
         <div class="like-container">
           <form action="/posts/<%= post._id %>/like" method="POST">
-              <input type="hidden" name="liked" value="<%post._id %>">
-              <input type="submit" class="like-button" value="👍 <%=post.likes.length%>">
-            </form> 
+            <input type="hidden" name="liked" value="<%post._id %>" />
+            <input
+              type="submit"
+              class="like-button"
+              value="👍 <%=post.likes.length%>"
+            />
+          </form>
         </div>
-      <% if(typeof user === "undefined"){ %>
-      <% } else if (post.author._id.equals(user._id)) { %>
+        <% if(typeof user === "undefined"){ %> <% } else if
+        (post.author._id.equals(user._id)) { %>
         <div class="edit-delete">
           <div class="edit">
-           
             <form action="/posts/<%= post._id %>/edit" method="GET">
-            <input type="submit" class="action-button" value="Edit">
+              <input type="submit" class="action-button" value="Edit" />
             </form>
           </div>
           <div class="delete">
-         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-            <input type="submit" class="action-button" value="Delete">
-          </form>  
-        </div>
+            <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+              <input type="submit" class="action-button" value="Delete" />
+            </form>
+          </div>
         </div>
       </div>
 
-      <% } %> 
- 
+      <% } %>
 
-    <div class="comment-view">
-      <h4>Comments: (<%= post.comments.length %>) </h4>
-      <% post.comments.forEach(function(c) { %>
+      <div class="comment-view">
+        <h4>Comments: (<%= post.comments.length %>)</h4>
+        <% post.comments.forEach(function(c) { %>
         <div class="comment">
           <div class="post-attributes">
-            Posted By: <%= c.author.username  %> at <%=c.createdAt.toDateString()%>
-           </div>
-          <%= c.content %>
-          <% if(typeof user === "undefined"){ %>
-            <% } else if (c.author._id.equals(user._id)) { %>
-              <div class="edit-delete-comment">
-                <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                  <input type="submit" class="action-button" value="Delete">
-                </form>  
-              </div>
-              <% } %> 
+            Posted By: <%= c.author.username %> at
+            <%=c.createdAt.toDateString()%>
+          </div>
+          <%= c.content %> <% if(typeof user === "undefined"){ %> <% } else if
+          (c.author._id.equals(user._id)) { %>
+          <div class="edit-delete-comment">
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+              <input type="submit" class="action-button" value="Delete" />
+            </form>
+          </div>
+          <% } %>
         </div>
-        <br/>
-      <% }); %>
+        <br />
+        <% }); %>
+      </div>
+      <% if(typeof user === "undefined"){ %> <% } else { %>
+      <div class="commentbox">
+        <form id="new-form" action="/posts/<%= post._id %>/" method="POST">
+          <textarea
+            rows="5"
+            id="index-post"
+            type="text"
+            name="content"
+            placeholder="Reply to post.. (400 char limit)"
+            maxlength="400"
+          ></textarea>
+          <input id="submit" type="submit" value="Add Comment" />
+        </form>
+      </div>
+
+      <% } %>
     </div>
-    <% if(typeof user === "undefined"){ %>
-      <% } else { %>
-    <div class="commentbox">
-      <form id="new-form" action="/posts/<%= post._id %>/" method="POST">
-        <textarea rows="5" id="index-post" type="text" name="content" placeholder="Reply to post.. (400 char limit)" maxlength="400"></textarea>
-        <input id="submit" type="submit" value="Add Comment">
-      </form> 
-    </div>
-    
-    <% } %> 
-  </div>
   </div>
 </body>

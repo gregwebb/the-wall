@@ -6,14 +6,14 @@ body {
 .container {
   max-width: 900px;
   background-color: #d6f5fa;
-  padding:0px 0px 10px;
+  padding: 0px 0px 10px;
   margin: auto;
 }
 
 .content-container {
   max-width: 900px;
   background-color: #d6f5fa;
-  padding:10px 10px 10px;
+  padding: 10px 10px 10px;
   margin: auto;
 }
 
@@ -29,12 +29,11 @@ a {
   border-color: #598dee;
 }
 
-
 .post-links {
- font-size: 8pt;
- margin-left: auto; 
- margin-right: 10px;
- text-align: right;
+  font-size: 8pt;
+  margin-left: auto;
+  margin-right: 10px;
+  text-align: right;
 }
 
 #index-post {
@@ -43,8 +42,8 @@ a {
   resize: none;
   border: 1px solid #598dee;
 }
-#submit {        
-  background-color: #008CBA;
+#submit {
+  background-color: #008cba;
   color: whitesmoke;
   padding: 4px 20px;
   margin-top: 5px;
@@ -55,7 +54,6 @@ a {
   margin: auto;
   max-width: 90%;
 }
-
 
 .commentbox {
   padding: 10px;
@@ -74,8 +72,6 @@ a {
   -webkit-appearance: none;
 }
 
-
-
 .comment {
   border: 1px;
   background-color: #dfe3f7;
@@ -85,13 +81,12 @@ a {
   padding: 0px 5px 5px;
 }
 
-
 .comment-view {
-  width:95%;
-  margin:auto;
+  width: 95%;
+  margin: auto;
 }
 
-.post-attributes{
+.post-attributes {
   text-align: left;
   font-size: x-small;
   padding: 5px 0px 5px;
@@ -106,12 +101,11 @@ a {
 }
 
 .post-content-post {
-padding: 5px;
+  padding: 5px;
 }
 
-
 .action-button {
-  background-color: #008CBA;
+  background-color: #008cba;
   color: whitesmoke;
   padding: 0;
   width: 70px;
@@ -133,7 +127,7 @@ padding: 5px;
 
 .post-buttons {
   width: 30%;
-  margin-left: auto; 
+  margin-left: auto;
   margin-right: 10px;
 }
 
@@ -143,7 +137,7 @@ padding: 5px;
   margin-right: 10px;
   padding-top: 15px;
   padding-bottom: 5px;
-  width:80%;
+  width: 80%;
 }
 
 .pages {
@@ -154,30 +148,28 @@ padding: 5px;
   display: inline-block;
 }
 
-
 .post-links-container {
   display: flex;
   flex-wrap: wrap;
 }
 
 .like-button {
-  height:24px;
+  height: 24px;
   background-color: #d6f5fa;
   color: #598dee;
-  font-weight:bold;
-  float:left;
+  font-weight: bold;
+  float: left;
   border: 0px;
   -webkit-appearance: none;
 }
 
-
 .edit-delete-comment {
-text-align: right;
+  text-align: right;
 }
 
 .action-button-comment {
   width: 50px;
-  background-color: #008CBA;
+  background-color: #008cba;
   color: whitesmoke;
   padding: 0;
   margin-left: 15px;
@@ -185,13 +177,12 @@ text-align: right;
 }
 
 .show-form {
-display: none;
+  display: none;
 }
 
 .edit-post {
   display: block;
 }
-
 
 ::placeholder {
   color: #598dee;
@@ -199,24 +190,23 @@ display: none;
 }
 
 nav {
-  padding:0px 10px 0px;
+  padding: 0px 10px 0px;
 }
 
 header {
-  padding:0px 0px 5px;
+  padding: 0px 0px 5px;
   max-width: 900px;
   background-image: url("https://c4.wallpaperflare.com/wallpaper/612/547/823/wall-brick-texture-units-wallpaper-preview.jpg");
 }
 
-
 .hello {
-  padding:0px 30px 10px;
+  padding: 0px 30px 10px;
 }
 
 h1 {
   text-align: center;
   font-weight: 900;
-  font-family: 'Cabin Sketch', cursive;
+  font-family: "Cabin Sketch", cursive;
   font-size: 40pt;
   color: #120b6b;
   margin: auto;
@@ -230,7 +220,6 @@ h1 {
 
 .nav-buttons {
   width: 100%;
-
 }
 
 .nav-search {
@@ -250,7 +239,7 @@ h1 {
   flex-direction: row;
 }
 
- .search-button img {
+.search-button img {
   width: 10px;
   height: 10px;
   object-fit: cover;
@@ -274,47 +263,46 @@ h1 {
   margin-right: 10px;
   width: 100%;
   text-align: right;
- }
+}
 
- .edit {
+.edit {
   -webkit-box-flex: 1 1 auto;
-  -moz-box-flex:  1 1 auto;
-  -webkit-flex:  1 1 auto;
-  -ms-flex:  1 1 auto;
-  flex:  1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   text-align: right;
   margin-right: 10px;
- }
+}
 
- .delete {
+.delete {
   text-align: right;
- }
+}
 
- .failwhale {
-   text-align: center;
- }
+.failwhale {
+  text-align: center;
+}
 
- #whale{
-   width: 80%;
- }
+#whale {
+  width: 80%;
+}
 
- .post-view-links {
-   display: flex;
-   flex-direction: row;
- }
+.post-view-links {
+  display: flex;
+  flex-direction: row;
+}
 
- .space {
-   width: 50%;
- }
+.space {
+  width: 50%;
+}
 
 .sort {
   width: 100px;
   font-size: 9px;
   margin-left: 5px;
   padding: 1px;
-
 }
 
-.sorted{
+.sorted {
   font-size: 10px;
 }

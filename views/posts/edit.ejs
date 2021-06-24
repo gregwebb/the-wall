@@ -34,20 +34,21 @@
               </div>
               </div>
             </div>
-      
-            
-
-
-
-
-<div id="edit-post">
-    <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-        <textarea rows="5" id="index-post" type="text" name="content" maxlength="400"><%= post.content %></textarea>
-<input id="submit" type="submit" value="Update Post">
-</form> 
-</div>
-<% } %> 
-</body>
-
-</div>
+            <div id="edit-post">
+                <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+                    <textarea 
+                    rows="5" 
+                    id="index-post" 
+                    type="text" 
+                    name="content" 
+                    maxlength="400"
+                    >
+                    <%= post.content %>
+                    </textarea>
+                    <input id="submit" type="submit" value="Update Post">
+                </form> 
+            </div>
+            <% } %> 
+        </body>
+    </div>
 </div>
