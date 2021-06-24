@@ -21,12 +21,15 @@ The Wall is meant to be a no thrills social media platform similar to Reddit or 
 
 
 **Login View (Home):**
+
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/loginhome.png?raw=true" alt ="login">
 
 **Home View:**
+
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/home.png?raw=true" alt ="login">
 
 **Post View:**
+
 <img src="https://github.com/gregwebb/the-wall/blob/main/public/images/post.png?raw=true" alt ="login">
 
 
