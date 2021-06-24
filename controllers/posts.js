@@ -111,6 +111,8 @@ function search(req, res) {
 }
 
 function sortLikes(req, res) {
+  const perPage = 5;
+  const page = req.params.page || 1;
   const sortBy = { likes: -1 };
   Post.find({})
     .sort(sortBy)
@@ -123,6 +125,7 @@ function sortLikes(req, res) {
       res.render("posts/liked", { posts });
     });
 }
+
 function sortComments(req, res) {
   const sortBy = { comments: -1 };
   Post.find({})
